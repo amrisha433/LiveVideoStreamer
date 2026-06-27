@@ -1,47 +1,49 @@
 package com.amrisha.livevideostreamer.network
 
-import java.io.OutputStream
+import java.io.DataOutputStream
 import java.net.Socket
 
 class SocketManager {
 
     private var socket: Socket? = null
-    private var outputStream: OutputStream? = null
+    private var outputStream: DataOutputStream? = null
 
-    fun connect(
-        ip: String,
-        port: Int
-    ): Boolean {
+    fun connect(ip: String, port: Int): Boolean {
 
         return try {
 
             socket = Socket(ip, port)
 
-            outputStream = socket?.getOutputStream()
+            outputStream = DataOutputStream(socket!!.getOutputStream())
 
             true
 
         } catch (e: Exception) {
 
-            e.printStackTrace()
+            android.util.Log.e("SocketError", "Connection failed", e)
 
             false
-
         }
-
     }
 
-    fun send(data: ByteArray) {
+    fun sendFrame(frame: ByteArray) {
 
         try {
 
-            outputStream?.write(data)
+            outputStream?.writeInt(frame.size)
+
+            outputStream?.write(frame)
+
             outputStream?.flush()
 
         } catch (e: Exception) {
-            e.printStackTrace()
-        }
 
+        android.util.Log.e(
+            "SocketManager",
+            "Failed to send frame",
+            e
+        )
+    }
     }
 
     fun disconnect() {
@@ -52,8 +54,8 @@ class SocketManager {
             socket?.close()
 
         } catch (e: Exception) {
+
             e.printStackTrace()
         }
-
     }
 }

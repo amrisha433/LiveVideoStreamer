@@ -44,14 +44,6 @@ fun CameraScreen() {
         }
     }
 
-    var ipAddress by remember {
-        mutableStateOf("")
-    }
-
-    var port by remember {
-        mutableStateOf("")
-    }
-
     var status by remember {
         mutableStateOf("Disconnected")
     }
@@ -69,6 +61,7 @@ fun CameraScreen() {
         if (hasPermission) {
 
             CameraPreview(
+                socketManager = socketManager,
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)
@@ -88,32 +81,6 @@ fun CameraScreen() {
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        OutlinedTextField(
-            value = ipAddress,
-            onValueChange = { ipAddress = it },
-            label = {
-                Text("IP Address")
-            },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        OutlinedTextField(
-            value = port,
-            onValueChange = { port = it },
-            label = {
-                Text("Port")
-            },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-        )
-
-        Spacer(modifier = Modifier.height(12.dp))
-
         Button(
             onClick = {
 
@@ -124,8 +91,8 @@ fun CameraScreen() {
                     val connected = withContext(Dispatchers.IO) {
 
                         socketManager.connect(
-                            ipAddress,
-                            port.toIntOrNull() ?: 0
+                            "10.0.2.2",
+                            9999
                         )
 
                     }
@@ -143,20 +110,9 @@ fun CameraScreen() {
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
         ) {
+
             Text("Connect")
-        }
 
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Button(
-            onClick = {
-
-            },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-        ) {
-            Text("Start Streaming")
         }
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -173,7 +129,9 @@ fun CameraScreen() {
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
         ) {
+
             Text("Disconnect")
+
         }
 
         Spacer(modifier = Modifier.height(12.dp))
@@ -184,4 +142,5 @@ fun CameraScreen() {
         )
 
     }
+
 }
