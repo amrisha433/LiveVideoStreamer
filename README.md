@@ -1,5 +1,14 @@
 # 📹 Live Video Streamer
 
+![Android](https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)
+![CameraX](https://img.shields.io/badge/CameraX-34A853?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+
+<img width="1536" height="1024" alt="ChatGPT Image Jun 29, 2026 at 12_54_54 AM" src="https://github.com/user-attachments/assets/37ccf3e7-1dd9-4511-abde-bc34088bd6ec" />
+
 A real-time Android video streaming application built using **Kotlin**, **Jetpack Compose**, and **CameraX**. The application captures live camera frames from an Android device, compresses them into JPEG format, and streams the frames over a TCP socket to a desktop Python receiver running on the same local network.
 
 The desktop receiver accepts incoming connections, reconstructs the transmitted frames, decodes them using OpenCV, and displays the live video stream in real time.
