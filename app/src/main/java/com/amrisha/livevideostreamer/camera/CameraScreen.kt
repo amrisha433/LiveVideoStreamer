@@ -48,6 +48,14 @@ fun CameraScreen() {
         mutableStateOf("Disconnected")
     }
 
+    var ipAddress by remember {
+        mutableStateOf("")
+    }
+
+    var port by remember {
+        mutableStateOf("9999")
+    }
+
     val socketManager = remember {
         SocketManager()
     }
@@ -81,6 +89,41 @@ fun CameraScreen() {
 
         Spacer(modifier = Modifier.height(12.dp))
 
+        OutlinedTextField(
+            value = ipAddress,
+            onValueChange = {
+                ipAddress = it
+            },
+            label = {
+                Text("Receiver IP Address")
+            },
+            placeholder = {
+                Text("192.168.x.x")
+            },
+            singleLine = true,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        OutlinedTextField(
+            value = port,
+            onValueChange = {
+                port = it
+            },
+            label = {
+                Text("Port")
+            },
+            singleLine = true,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
+        )
+
+        Spacer(modifier = Modifier.height(12.dp))
+
         Button(
             onClick = {
 
@@ -91,8 +134,8 @@ fun CameraScreen() {
                     val connected = withContext(Dispatchers.IO) {
 
                         socketManager.connect(
-                            "10.0.2.2",
-                            9999
+                            ipAddress.trim(),
+                            port.toIntOrNull() ?: 9999
                         )
 
                     }
@@ -142,5 +185,4 @@ fun CameraScreen() {
         )
 
     }
-
 }
