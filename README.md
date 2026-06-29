@@ -100,7 +100,7 @@ LiveVideoStreamer
 # 🏗 Architecture
 
 <img width="1536" height="1024" alt="ChatGPT Image Jun 29, 2026 at 12_38_12 AM" src="https://github.com/user-attachments/assets/b5f6553e-4445-48f3-b5ba-d150d6aa7feb" />
-
+---
 The application captures camera frames using CameraX, compresses each frame into JPEG format, and streams the data over a TCP socket to a Python desktop receiver. The receiver reconstructs the frames and displays the live video stream using OpenCV.
 
 ---
@@ -221,27 +221,6 @@ Waiting for Android connection...
 
 | <img width="475" height="659" alt="Screenshot 2026-06-29 at 12 20 42 AM" src="https://github.com/user-attachments/assets/e2aec273-1416-48bd-98f0-62b03216829d" />
  
-
----
-
-# 🎥 Demo Video
-
-A complete demonstration of the project is included in the repository.
-
-```text
-demo/
-└── LiveVideoStreamerDemo.mp4
-```
-
-**Demo Video:** `https://drive.google.com/file/d/1ClKqk6aNT9pZhmhpY8JiyBtt5F9Y2oUj/view`
-
-The demonstration includes:
-
-* Launching the Android application
-* Starting the Python receiver
-* Connecting both devices
-* Live video streaming
-* Disconnecting the session
 
 ---
 
