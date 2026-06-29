@@ -208,16 +208,17 @@ Waiting for Android connection...
 
 ## Android Application
 
-| Home Screen                      | Connection Screen                      |
-| -------------------------------- | -------------------------------------- |
+| Home Screen & Connection Screen |
+
 | <img width="285" height="635" alt="Screenshot 2026-06-29 at 12 18 44 AM" src="https://github.com/user-attachments/assets/2e501f34-1667-4934-8245-be9acd5a2847" />
- | <img width="1470" height="956" alt="Screenshot 2026-06-28 at 1 19 19 PM" src="https://github.com/user-attachments/assets/933c41a3-9637-41b2-b633-f33324cefbb7" />
+---
+  <img width="1470" height="956" alt="Screenshot 2026-06-28 at 1 19 19 PM" src="https://github.com/user-attachments/assets/933c41a3-9637-41b2-b633-f33324cefbb7" />
  |
 
 ## Streaming
 
-| Android Streaming                     | Desktop Receiver                      |
-| ------------------------------------- | ------------------------------------- |
+| Android Streaming & Desktop Receiver |
+
 | <img width="475" height="659" alt="Screenshot 2026-06-29 at 12 20 42 AM" src="https://github.com/user-attachments/assets/e2aec273-1416-48bd-98f0-62b03216829d" />
  
 
@@ -234,7 +235,7 @@ demo/
 
 Or add a YouTube (Unlisted) or Google Drive link here:
 
-**Demo Video:** `<Paste Demo Video Link Here>`
+**Demo Video:** `https://drive.google.com/file/d/1ClKqk6aNT9pZhmhpY8JiyBtt5F9Y2oUj/view`
 
 The demonstration includes:
 
