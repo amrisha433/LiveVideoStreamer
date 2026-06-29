@@ -100,7 +100,7 @@ LiveVideoStreamer
 # 🏗 Architecture
 
 <img width="1536" height="1024" alt="ChatGPT Image Jun 29, 2026 at 12_38_12 AM" src="https://github.com/user-attachments/assets/b5f6553e-4445-48f3-b5ba-d150d6aa7feb" />
----
+|
 The application captures camera frames using CameraX, compresses each frame into JPEG format, and streams the data over a TCP socket to a Python desktop receiver. The receiver reconstructs the frames and displays the live video stream using OpenCV.
 
 ---
