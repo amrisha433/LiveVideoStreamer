@@ -233,8 +233,6 @@ demo/
 └── LiveVideoStreamerDemo.mp4
 ```
 
-Or add a YouTube (Unlisted) or Google Drive link here:
-
 **Demo Video:** `https://drive.google.com/file/d/1ClKqk6aNT9pZhmhpY8JiyBtt5F9Y2oUj/view`
 
 The demonstration includes:
